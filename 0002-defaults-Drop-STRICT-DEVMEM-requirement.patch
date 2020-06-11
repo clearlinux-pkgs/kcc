@@ -1,7 +1,7 @@
 From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Miguel Bernal Marin <miguel.bernal.marin@linux.intel.com>
-Date: Thu, 11 Jun 2020 01:28:27 -0500
-Subject: [PATCH] drop extra DEVMEM depends restriction
+From: Miguel Bernal Marin <miguel.bernal.marin@gmail.com>
+Date: Thu, 11 Jun 2020 11:39:23 -0500
+Subject: [PATCH] defaults: Drop STRICT DEVMEM requirement
 
 KCC recommends to disable DEVMEM and set STRICT_DEVMEM and
 IO_STRICT_DEVMEM, but from [1]
@@ -24,6 +24,8 @@ As STRICT_DEVMEM and IO_STRICT_DEVMEM are not set when DEVMEN
 "is not set", let's remove them from KCC
 
 [1] https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project/Recommended_Settings
+
+Signed-off-by: John Andersen <johnandersenpdx@gmail.com>
 ---
  kcc/defaults.py | 2 --
  1 file changed, 2 deletions(-)

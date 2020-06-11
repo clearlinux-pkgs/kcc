@@ -1,0 +1,35 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+Date: Tue, 9 Apr 2019 23:07:42 +0200
+Subject: [PATCH] cli: Fix --query option (#3)
+
+* --query option didn't work because kconfig is always set to
+  Kconfig.default(). Fixed by passing must_be_{set,set_or_module,unset}
+  to Kconfig
+
+Signed-off-by: Fabrice Fontaine <fontaine.fabrice@gmail.com>
+---
+ kcc/cli.py | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/kcc/cli.py b/kcc/cli.py
+index 58d0355..f58d908 100644
+--- a/kcc/cli.py
++++ b/kcc/cli.py
+@@ -22,8 +22,12 @@ def run(*,
+         must_be_set.update(MUST_BE_SET)
+         must_be_set_or_module.update(MUST_BE_SET_OR_MODULE)
+         must_be_unset.update(MUST_BE_UNSET)
++        kconfig = Kconfig(must_be_set=must_be_set,
++            must_be_set_or_module=must_be_set_or_module,
++            must_be_unset=must_be_unset)
++    else:
++        kconfig = Kconfig.default()
+ 
+-    kconfig = Kconfig.default()
+     results = kconfig.check(config_file)
+     if not results:
+         return
+-- 
+https://clearlinux.org
+
