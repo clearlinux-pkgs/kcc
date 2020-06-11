@@ -4,7 +4,7 @@
 #
 Name     : kcc
 Version  : 0.0.8
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/fa/44/949c55ccf7361230b198b6316714b8c9fb8d4ed3d00da793192f2ccb4809/kcc-0.0.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/fa/44/949c55ccf7361230b198b6316714b8c9fb8d4ed3d00da793192f2ccb4809/kcc-0.0.8.tar.gz
 Summary  : Check kernel config for security issues
@@ -14,7 +14,8 @@ Requires: kcc-bin = %{version}-%{release}
 Requires: kcc-python = %{version}-%{release}
 Requires: kcc-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Patch1: 0001-drop-extra-DEVMEM-depends-restriction.patch
+Patch1: 0001-cli-Fix-query-option-3.patch
+Patch2: 0002-defaults-Drop-STRICT-DEVMEM-requirement.patch
 
 %description
 ===========================
@@ -50,13 +51,14 @@ python3 components for the kcc package.
 %setup -q -n kcc-0.0.8
 cd %{_builddir}/kcc-0.0.8
 %patch1 -p1
+%patch2 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1591859285
+export SOURCE_DATE_EPOCH=1591911184
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
