@@ -4,7 +4,7 @@
 #
 Name     : kcc
 Version  : 0.0.8
-Release  : 9
+Release  : 10
 URL      : https://files.pythonhosted.org/packages/fa/44/949c55ccf7361230b198b6316714b8c9fb8d4ed3d00da793192f2ccb4809/kcc-0.0.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/fa/44/949c55ccf7361230b198b6316714b8c9fb8d4ed3d00da793192f2ccb4809/kcc-0.0.8.tar.gz
 Summary  : Check kernel config for security issues
