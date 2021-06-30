@@ -1,5 +1,5 @@
 PKG_NAME := kcc
-URL = https://files.pythonhosted.org/packages/fa/44/949c55ccf7361230b198b6316714b8c9fb8d4ed3d00da793192f2ccb4809/kcc-0.0.8.tar.gz
+URL = https://files.pythonhosted.org/packages/7e/c3/f9ba13362899209242078bbf24c7d8e62baf90ae23d9a199429e07a78d60/kcc-0.0.9.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
