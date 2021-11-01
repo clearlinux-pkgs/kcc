@@ -4,7 +4,7 @@
 #
 Name     : kcc
 Version  : 0.0.9
-Release  : 17
+Release  : 18
 URL      : https://files.pythonhosted.org/packages/7e/c3/f9ba13362899209242078bbf24c7d8e62baf90ae23d9a199429e07a78d60/kcc-0.0.9.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7e/c3/f9ba13362899209242078bbf24c7d8e62baf90ae23d9a199429e07a78d60/kcc-0.0.9.tar.gz
 Summary  : Check kernel config for security issues
@@ -54,15 +54,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1625013021
+export SOURCE_DATE_EPOCH=1635746243
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
